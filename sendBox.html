@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Text Message</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--        <link rel="icon" href="images/AA.png" sizes="32x32">-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script LANGUAGE="JavaScript">
+			Maxlen=160;
+            function checkMaxInput(form) {
+                form.remainwords.value = Maxlen-form.contents.value.length;}
+        </script>
+        
+    </head>
+    <body>
+        <div class="jumbotron text-center">
+            <font color="#808080"><h1>Text Message APP</h1></font>
+            
+        </div>
+        <div class="container">
+            <div class ="well">
+                        <h2 id='shop'></h2><br>
+                        <script>
+                            $("#shop").html = "haha";
+                        </script>
+                        <form method = "post" name = "edit" id = "emailSend" action = "twilioMessage.php" enctype="multipart/form-data">
+
+                            <div class ="row">  
+                                <div class="col-sm-12">
+                                    <font size="5"><label for="phone">Phone Numbers List(.csv format): </label></font>
+                                    <br><input type="file" name="phoneNumberList"/><br>
+                                </div>
+                                   <div class="col-sm-12">
+                                    <font size="5"><label for="contents">Text Message Content (160 characters per message): </label><br></font>
+                                    <textarea name=contents cols=100 rows=5 onKeyDown="checkMaxInput(this.form)" onKeyUp="checkMaxInput(this.form)"></textarea>
+                                    <br>
+                                    <br>
+                                    <font color="red"><input readonly type=text name=remainwords size=2 maxlength=2 value="160"> characters left</font>
+                               
+                                       </div>
+                            </div> 
+                            <br>
+                            
+                            <div><input class = "btn btn-primary" type = "submit" name = "submit" value = "Submit"/></div>
+                        </form>
+                    </div>
+        
+            
+            
+
+            
+            
+        </div> 
+        <!-- Modal -->
+        
+    </body>
+</html>
